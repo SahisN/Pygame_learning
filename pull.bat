@@ -1,3 +1,5 @@
 @echo off
-git pull 
+git pull
+echo done!
+echo press any button to quit 
 pause > nul
