@@ -10,11 +10,11 @@ pygame.display.set_caption('Blitting Images!')
 
 # Create images... returns a surface object with the image drawn on it
 # We can get the rect of the surface and use the rect to position the image
-dragon_left_image = pygame.image.load('pygame_tutorial/assets/images/dragon_left.png')
+dragon_left_image = pygame.image.load('assets/images/dragon_left.png')
 dragon_left_rect = dragon_left_image.get_rect()
 dragon_left_rect.topleft = (0, 0)
 
-dragon_right_image = pygame.image.load('pygame_tutorial/assets/images/dragon_right.png')
+dragon_right_image = pygame.image.load('assets/images/dragon_right.png')
 dragon_right_rect = dragon_right_image.get_rect()
 dragon_right_rect.topright = (WINDOW_WIDTH, 0)
 
