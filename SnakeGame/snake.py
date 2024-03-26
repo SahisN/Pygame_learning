@@ -99,7 +99,7 @@ while running:
     head_xy = (head_x, head_y, SNAKE_SIZE, SNAKE_SIZE)
 
     # Check for game over
-    if head_rect.left < 0 or head_rect.right > WINDOW_WIDTH or head_rect.top < 0 or head_rect.bottom > WINDOW_HEIGHT:
+    if head_rect.left < 0 or head_rect.right > WINDOW_WIDTH or head_rect.top < 0 or head_rect.bottom > WINDOW_HEIGHT or head_xy in body_xy:
         window.blit(game_over_text, game_over_rect)
         window.blit(continue_text, continue_rect)
         pygame.display.update()
@@ -116,7 +116,7 @@ while running:
                     head_y = WINDOW_HEIGHT // 2 + 100
                     head_xy = (head_x, head_y, SNAKE_SIZE, SNAKE_SIZE)
 
-                    body_coords = []
+                    body_xy = []
 
                     snake_dx = 0
                     snake_dy = 0
@@ -142,7 +142,7 @@ while running:
         score_text = font.render(f'Score: {str(score)}', True, GREEN, DARK_RED)
 
     # fill the surface
-    window.fill((255, 255, 255))
+    window.fill(WHITE)
 
     # blit hud
     window.blit(title_text, title_rect)
@@ -160,3 +160,6 @@ while running:
 
     # tick the clock
     clock.tick(FPS)
+
+# End the game
+pygame.quit()
